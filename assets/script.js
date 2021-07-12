@@ -4,9 +4,9 @@ var generateBtn = document.querySelector("#generate");
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
-  var passwordText = document.querySelector("#password");
+  //var passwordText = document.querySelector("#password");
 
-  passwordText.value = password;
+  //passwordText.value = password;
 
 }
 
@@ -15,7 +15,7 @@ generateBtn.addEventListener("click", writePassword);
 
 var lowerCase = 'abcdefghijklmnopqrstuvwxyz';
 var upperCase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-var numberInput = '0123456789';
+var number = '0123456789';
 var specialCharacters = '!"#$%&()=-+/{}';
 var result ='';
 var possibleCharacters='';
@@ -43,26 +43,38 @@ var  passwordLength = parseInt(prompt("Please enter number between 8 and 128."))
 
 }
 
-var upperCase = confirm("Do you want uppercase letters in your password?") ;
-var lowerCase = confirm("Do you want lowercase letters in your password?") ;
+var upperInput = confirm("Do you want uppercase letters in your password?") ;
+var lowerInput = confirm("Do you want lowercase letters in your password?") ;
 var numberInput = confirm("Do you want numbers in your password?");
-var specialCharacters= confirm("Do you want special characters in your password?");
+var specialInput= confirm("Do you want special characters in your password?");
 
-if(upperCase) {
+if(upperInput) {
 possibleCharacters += upperCase
 }
-if(lowerCase) {
+if(lowerInput) {
 possibleCharacters += lowerCase
 }
 if(numberInput) {
-  possibleCharacters += numberInput
+  possibleCharacters += number
 }
-if(specialCharacters) {
+if(specialInput) {
   possibleCharacters += specialCharacters
 }
+console.log(possibleCharacters);
+// run a function to generate the actual password
+myFunction(passwordLength)
+}
 
+function myFunction(length) {
+  for(var i=0; i<length; i++ ){
+    var passwordMath = Math.floor(Math.random() * possibleCharacters.length)
+    result += possibleCharacters.charAt(passwordMath)
+    console.log("Your password is: ",result)
+    
+   // do a thing
+   // add a character to the password from the possibleCharacters
+  }
+  var passwordText = document.querySelector("#password");
 
-for(var i=0; i<passwordLength; i++ ){
-  // do a thing
-  // add a character to the password from the possibleCharacters
+  passwordText.value = result;
 }
