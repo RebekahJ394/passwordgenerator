@@ -66,6 +66,3 @@ for(var i=0; i<passwordLength; i++ ){
   // do a thing
   // add a character to the password from the possibleCharacters
 }
-
-
-
