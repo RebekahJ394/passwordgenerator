@@ -15,34 +15,57 @@ generateBtn.addEventListener("click", writePassword);
 
 var lowerCase = 'abcdefghijklmnopqrstuvwxyz';
 var upperCase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-var number = '0123456789';
+var numberInput = '0123456789';
 var specialCharacters = '!"#$%&()=-+/{}';
+var result ='';
+var possibleCharacters='';
+var guarenteedCharacters='';
 
 function generatePassword() {
-  let passwordLength = window.prompt("Please enter number between 8 to 128.");
 
-  passwordLength =parseInt(passwordLength);
-  console.log(typeof passwordLength);
-
-}
+var  passwordLength = parseInt(prompt("Please enter number between 8 and 128."));
+  console.log("Password Length: ",passwordLength)
+ // passwordLength =parseInt(passwordLength);
 
 
-  // if(!passwordLength){
-  // return;
-}
 
-  if(passwordLength > 8 || passwordLength < 128) {
+
+  if(passwordLength >= 8 && passwordLength <= 128) {
   console.log(passwordLength);
 
-} else (passwordLength < 8) {
+} else if (passwordLength < 8) {
   alert("Password must be larger than 8. Thanks!")
 
-} else (passwordLength > 128) {
+} else if (passwordLength > 128) {
   alert("Password must be less than 128. Thanks!")
+} else if (isNaN(passwordLength)) {
+  alert("Please enter a number")
+
+}
+
+var upperCase = confirm("Do you want uppercase letters in your password?") ;
+var lowerCase = confirm("Do you want lowercase letters in your password?") ;
+var numberInput = confirm("Do you want numbers in your password?");
+var specialCharacters= confirm("Do you want special characters in your password?");
+
+if(upperCase) {
+possibleCharacters += upperCase
+}
+if(lowerCase) {
+possibleCharacters += lowerCase
+}
+if(numberInput) {
+  possibleCharacters += numberInput
+}
+if(specialCharacters) {
+  possibleCharacters += specialCharacters
 }
 
 
-
+for(var i=0; i<passwordLength; i++ ){
+  // do a thing
+  // add a character to the password from the possibleCharacters
+}
 
 
 
