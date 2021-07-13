@@ -12,24 +12,24 @@ function writePassword() {
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
-
+//created variables for what is needed for the password
 var lowerCase = 'abcdefghijklmnopqrstuvwxyz';
 var upperCase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 var number = '0123456789';
 var specialCharacters = '!"#$%&()=-+/{}';
 var result ='';
 var possibleCharacters='';
-var guarenteedCharacters='';
+
 
 function generatePassword() {
-
+//created variable prompt for length input and converted it into numbers
 var  passwordLength = parseInt(prompt("Please enter number between 8 and 128."));
   console.log("Password Length: ",passwordLength)
  // passwordLength =parseInt(passwordLength);
 
 
 
-
+//created guidelines for user to follow the directions
   if(passwordLength >= 8 && passwordLength <= 128) {
   console.log(passwordLength);
 
@@ -39,8 +39,8 @@ var  passwordLength = parseInt(prompt("Please enter number between 8 and 128."))
 } else if (passwordLength > 128) {
   alert("Password must be less than 128. Thanks!")
 } else if (isNaN(passwordLength)) {
-  alert("Please enter a number")
-
+  alert("Please enter a number. Thanks!")
+  return
 }
 
 var upperInput = confirm("Do you want uppercase letters in your password?") ;
