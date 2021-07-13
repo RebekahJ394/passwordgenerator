@@ -61,7 +61,7 @@ if(specialInput) {
   possibleCharacters += specialCharacters
 }
 console.log(possibleCharacters);
-// run a function to generate the actual password
+
 myFunction(passwordLength)
 }
 
@@ -71,8 +71,6 @@ function myFunction(length) {
     result += possibleCharacters.charAt(passwordMath)
     console.log("Your password is: ",result)
     
-   // do a thing
-   // add a character to the password from the possibleCharacters
   }
   var passwordText = document.querySelector("#password");
 
