@@ -7,5 +7,7 @@ Allows users to confirm what they would like included in their password
 Successfully generates password in the value box
 Comments in Javascript describing elements
 
-Github pages URL= 
-Github repository URL=
+Github pages URL= https://rebekahj394.github.io/passwordgenerator/
+Github repository URL= https://github.com/RebekahJ394/passwordgenerator
+
+images/Password generator image.png
